@@ -50,6 +50,7 @@ class InputViewController: UIViewController {
             self.task.contents = self.contentsTextView.text!
             self.task.category = self.categoryTextField.text!
             self.task.date = self.datePicker.date
+            // データベースに登録idが同じ場合は更新
             self.realm.add(self.task, update: .modified)
         }
         
